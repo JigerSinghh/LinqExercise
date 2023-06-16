@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO.Pipes;
 using System.Linq;
@@ -28,7 +28,7 @@ namespace LinqExercise
             var avg = numbers.Average();
             Console.WriteLine($"AVG = {avg}");
             //TODO: Order numbers in ascending order and print to the console
-            Console.WriteLine("----------ascending-----------------");
+            Console.WriteLine("ascending");
             var ascending = from num in numbers
                             orderby num ascending
                             select num;
@@ -36,7 +36,7 @@ namespace LinqExercise
             {
                 Console.WriteLine(num);
             }
-            Console.WriteLine("----------descending-----------------");
+            Console.WriteLine("descending");
             //TODO: Order numbers in decsending order and print to the console
             var descending = from num in numbers
                              orderby num descending
@@ -46,7 +46,7 @@ namespace LinqExercise
                 Console.WriteLine(num);
             }
             //TODO: Print to the console only the numbers greater than 6
-            Console.WriteLine("-------------greater than 6-----------");
+            Console.WriteLine("-greater than 6");
             var order1 = from num in numbers
                          where num > 6
                          select num;
@@ -57,14 +57,14 @@ namespace LinqExercise
             }
 
             //TODO: Order numbers in any order (acsending or desc) but only print 4 of them **foreach loop only!**
-            Console.WriteLine("_-_-_-_only 4 _-_-_-_-_-");
+            Console.WriteLine("only 4");
             foreach (var num in descending.Take(4))
             {
                 Console.WriteLine(num);
             }
             //TODO: Change the value at index 4 to your age, then print the numbers in decsending order
             Console.WriteLine("___change age at 4 then print in decsending_____");
-            numbers[4] = 23;
+            numbers[4] = 21;
 
 
             var ageNum = from num in numbers
@@ -133,6 +133,7 @@ namespace LinqExercise
 
             return employees;
         }
-        #endregion
+        
     }
 }
+#endregion
